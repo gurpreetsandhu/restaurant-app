@@ -1,3 +1,4 @@
+
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -323,7 +324,7 @@ app.get('/api/restaurants', [
   console.log('Starting: Fetch List of Restaurants');
 
   const errors = validationResult(req);
-    if ((!Object.keys(req.query).length === 0 && !errors.isEmpty()) || 
+    if ((req.query.page !== undefined && req.query.page !== undefined && !errors.isEmpty()) || 
     (req.query.page == NaN || req.query.perPage == NaN)) {
         var message = 'Invalid Input';
         res.status(400).render('error', { message, layout:false });
