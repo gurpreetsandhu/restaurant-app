@@ -1,0 +1,55 @@
+<!-- views/createRestaurant.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/create-styles.css">
+  <title>Create Restaurant</title>
+</head>
+
+<main class="main-content">
+  <%- include('partials/header') %>
+<body>
+  <div class="wrapper">
+  <h1 class="crt-title">Create New Restaurant</h1>
+  <form class="crt-from" action="/api/restaurants" method="post">
+
+    <label class="label-1" for="restaurant_id">Restaurant ID:</label>
+    <input class="inp-1" type="number" name="restaurant_id" required>
+    <br>
+
+    <label class="label-2" for="name">Name:</label>
+    <input class="inp-2" type="text" name="name" required>
+    <br>
+
+    <label class="label-3" for="borough">Borough:</label>
+    <input class="inp-3" type="text" name="borough">
+    <br>
+
+    <label class="label-4" for="cuisine">Cuisine:</label>
+    <input class="inp-4" type="text" name="cuisine">
+    <br>
+
+    <label class="label-5" for="street">Street:</label>
+    <input class="inp-5" type="text" name="address[street]">
+    <br>
+
+    <label class="label-6" for="building">Building:</label>
+    <input class="inp-6" type="text" name="address[building]">
+    <br>
+
+    <label class="label-7" for="zipcode">Zipcode:</label>
+    <input class="inp-7" for="text" name="address[zipcode]">
+    <br>
+
+    <button class = "submit-button" type="submit">Add Restaurant</button>
+  </form>
+  <br>
+  <!-- <a href="/restaurants">Back to List</a> -->
+  <button class = "back-button" onclick="window.location.href='/api/restaurants';">Back to List</button>
+</div>
+</body>
+<%- include('partials/footer') %>
+</main>
+</html>

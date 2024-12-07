@@ -1,0 +1,31 @@
+<!-- views/deleteRestaurant.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/delete-styles.css">
+  <title>Delete Restaurant</title>
+</head>
+
+<main class="main-content">
+  <%- include('partials/header') %>
+<body>
+  <div class="wrapper">
+  <h1 class="ask">Are you sure you want to delete the restaurant?</h1>
+  <h2 class="rest-name"><%= restaurant.name %></h2>
+  <p class="det-item"><strong>Borough:</strong> <%= restaurant.borough %></p>
+  <p class="det-item"><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
+  <p class="det-item"><strong>Address:</strong> <%= restaurant.address.street %>, <%= restaurant.address.building %>, <%= restaurant.address.zipcode %></p>
+
+  <form action="/api/restaurants/<%= restaurant._id %>?_method=DELETE" method="POST">
+    <button class = "submit-button" type="submit">Yes, Delete</button>
+  </form>
+
+  <!-- <a href="/restaurants/<%= restaurant._id %>">Cancel</a> -->
+  <button class = "cancel-button" onclick="window.location.href='/api/restaurants/<%= restaurant._id %>';">Cancel</button>
+</div>
+</body>
+<%- include('partials/footer') %>
+</main>
+</html>

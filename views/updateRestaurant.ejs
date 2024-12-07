@@ -1,0 +1,52 @@
+<!-- views/updateRestaurant.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/update-styles.css">
+  <title>Edit Restaurant</title>
+</head>
+
+<main class="main-content">
+  <%- include('partials/header') %>
+<body>
+  <div class="wrapper">
+  <h1 class="upd-title">Edit Restaurant</h1>
+  <form class="upd-form" action="/api/restaurants/<%= restaurant._id %>?_method=PUT" method="post">
+    <label class="label-1" for="name">Name:</label>
+    <input class="inp-1" type="text" name="name" value="<%= restaurant.name %>" required>
+    <br>
+
+    <label class="label-2" for="borough">Borough:</label>
+    <input class="inp-2" type="text" name="borough" value="<%= restaurant.borough %>">
+    <br>
+
+    <label class="label-3" for="cuisine">Cuisine:</label>
+    <input class="inp-3" type="text" name="cuisine" value="<%= restaurant.cuisine %>">
+    <br>
+
+    <label class="label-4" for="street">Street:</label>
+    <input class="inp-4" type="text" name="address[street]" value="<%= restaurant.address.street %>">
+    <br>
+
+    <label class="label-5" for="building">Building:</label>
+    <input class="inp-5" type="text" name="address[building]" value="<%= restaurant.address.building %>">
+    <br>
+
+    <label class="label-6" for="zipcode">Zipcode:</label>
+    <input class="inp-6" type="text" name="address[zipcode]" value="<%= restaurant.address.zipcode %>">
+    <br>
+
+    <button class = "submit-button" type="submit">Update Restaurant</button>
+  </form>
+  <br>
+  <!-- <a href="/restaurants/<%= restaurant._id %>">Back to Details</a> -->
+  <button class = "back-button" onclick="window.location.href='/api/restaurants/<%= restaurant._id %>';">Back to Details</button>
+  <button class = "back-button-2" onclick="window.location.href='/api/restaurants';">Back to List</button>
+
+</div>
+</body>
+<%- include('partials/footer') %>
+</main>
+</html>

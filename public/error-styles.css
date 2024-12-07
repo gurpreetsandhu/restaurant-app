@@ -1,0 +1,123 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+
+
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+header {
+    margin-top: 0%;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    background-color: black;
+    width: 100%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.header-element {
+    margin-left: 0%;
+    align-items: center;
+    margin-bottom: 0%;
+}
+
+header h1 strong {
+    margin-left: 40%;
+    width:fit-content;
+}
+
+.home-button {
+    font-size: 35px;
+    color: white;
+    background-color: black;
+    border: 0px;
+    margin-left: 2%;
+}
+
+.app-name {
+    margin-left: 30%;
+    font-weight: 10px;
+    font-size: 30px;
+}
+
+.search-button {
+    margin-left: 35%;
+    font-size: 35px;
+    color: white;
+    background-color: black;
+    border: 0px;
+}
+
+footer {
+    color: white;
+    background-color: black;
+    width: 100%;
+    margin-top: 0%;
+}
+
+p {
+    text-align: center;
+    color: #fff;
+    font-size: 1.2em;
+    margin-top: 2%;
+  }
+
+.footer-element {
+    margin-bottom: 0%;
+    padding-top:0%
+}
+
+.show-button {
+    padding: 10px;
+    padding-left: 38%;
+    padding-right: 38%;
+    width: 100%;
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-button:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+.show-button:active {
+    background-color: #111;
+    transform: translateY(2px);
+}
+
+.wrapper {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 40%;
+    margin-left: 29%;
+    margin-top: 12.5%;
+    margin-bottom: 12.5%;
+}
+
+.error-title {
+    text-align: center;
+}
+
+.error-message {
+    color: black;
+}
+  

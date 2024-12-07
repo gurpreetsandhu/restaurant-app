@@ -1,0 +1,31 @@
+<!-- views/restaurantDetail.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/detail-styles.css">
+  <title>Restaurant Details</title>
+</head>
+
+<main class="main-content">
+  <%- include('partials/header') %>
+<body>
+  <div class="wrapper">
+  <h1 class="rest-title"><%= restaurant.name %> Details</h1>
+  <p class="det-item"><strong>Borough:</strong> <%= restaurant.borough %></p>
+  <p class="det-item"><strong>Cuisine:</strong> <%= restaurant.cuisine %></p>
+  <p class="det-item"><strong>Address:</strong> <%= restaurant.address.street %>, <%= restaurant.address.building %>, <%= restaurant.address.zipcode %></p>
+
+  <button class = "edit-button" onclick="window.location.href='/restaurants/<%= restaurant._id %>/edit';">Edit</button>
+  <button class = "delete-button" onclick="window.location.href='/restaurants/<%= restaurant._id %>/delete';">Delete</button>
+  <button class = "back-button" onclick="window.location.href='/api/restaurants';">Back to List</button>
+
+  <!-- <a href="/restaurants/<%= restaurant._id %>/edit">Edit</a> |
+  <a href="/restaurants/<%= restaurant._id %>/delete">Delete</a> |
+  <a href="/allRestaurants">Back to List</a> -->
+</div>
+</body>
+<%- include('partials/footer') %>
+</main>
+</html>

@@ -1,0 +1,240 @@
+/* table */
+main {
+    margin-top: 0%;
+    margin-bottom: 0%;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    margin-top: 0.5%;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    background-color: black;
+    width: auto;
+}
+
+.header-element {
+    margin-left: 3%;
+    align-items: center;
+    margin-bottom: 0%;
+}
+
+.home-button {
+    font-size: 35px;
+    color: white;
+    background-color: black;
+    border: 0px;
+}
+
+.app-name {
+    margin-left: 30%;
+    font-weight: 10px;
+    margin-bottom: 0.5%;
+    font-size: 30px;
+}
+
+.search-button {
+    margin-left: 35%;
+    font-size: 35px;
+    color: white;
+    background-color: black;
+    border: 0px;
+}
+
+footer {
+    color: white;
+    background-color: black;
+    width: 100%;
+    margin-top: 0%;
+}
+
+.footer-element {
+    margin-bottom: 0%;
+    padding-top:0%
+}
+
+p {
+    text-align: center;
+    color: #fff;
+    font-size: 1.2em;
+    margin-top: 20px;
+  }
+
+header h1 strong {
+    margin-left: 40%;
+    width:fit-content;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 0%;
+}
+
+.rest-wrapper {
+    background-color: #fff;
+    padding: 3px;
+    width: auto;
+    max-width: 100%;
+}
+
+.rest-table {
+    width: 90%;
+    margin: 5px auto;
+    border-collapse: collapse;
+    border: 2px solid black;
+  }
+  
+.rest-table th, .rest-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+.rest-table th {
+    background-color: black;
+    color: white;
+  }
+  
+.rest-table td {
+    background-color: white;
+  }
+  
+  /* Table Row Hover Effect */
+.rest-table tr:hover {
+    background-color: #333;
+  }
+  
+.view-button,
+.edit-button,
+.delete-button {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+button.prev-button,
+button.next-button {
+    background-color: black;
+    color: white;
+    padding: 5px 15px;
+    margin: 5px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+
+  .create-button {
+    background-color: black;
+    color: white;
+    padding: 5px 15px;
+    margin: 5px;
+    margin-bottom: 2.5%;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .view-button:hover,
+  .edit-button:hover,
+  .delete-button:hover,
+  button.prev-button:hover,
+  button.next-button:hover,
+  .create-button:hover {
+    background-color: #444;
+    transform: translateY(-2px);
+  }
+  
+  .view-button:active,
+  .edit-button:active,
+  .delete-button:active,
+  button.prev-button:active,
+  button.next-button:active,
+  .create-button:active {
+    background-color: #111;
+    transform: translateY(2px);
+  }
+  
+  /* Pagination Button Container */
+  div {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+
+/* Form styling */
+.search-form {
+    padding-left: 80px;
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2px;
+    margin-bottom: 5px;
+    border: 2px;
+    border-radius: 5px;
+}
+
+.search-form input {
+    padding: 10px;
+    padding-left: 30px;
+    height: 10px;
+    width: 150px;
+    font-size: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.search-form button.submit-button {
+    padding: 5px 15px;
+    font-size: 20px;
+    height: 35px;
+    margin-left: 20px;
+    background-color: black;
+    align-self: auto;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button.submit-button:hover {
+    background-color: #333;
+}
+
+.search-form button.submit-button:active {
+    background-color: #111;
+}
+
+.input-label {
+    font-size: 20px;
+    color: black;
+    padding-left: 20px;
+}
+
+.search-title {
+    font-size: 25px;
+}
+
+.no-rest-message {
+  color: black;
+}

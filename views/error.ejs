@@ -1,0 +1,23 @@
+<!-- views/error.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error</title>
+  <link rel="stylesheet" href="/error-styles.css"> <!-- Link to the CSS file -->
+</head>
+<main class="main-content">
+    <%- include('partials/header') %>
+<body>
+  <div class="wrapper">
+    <h1 class="error-title"><strong>Error Occurred</strong></h1>
+    <p class="error-message"><%= message %></p>
+
+    <button class = "show-button" onclick="window.location.href='/api/restaurants';">Restaurant List</button>
+  </div>
+
+</body>
+<%- include('partials/footer') %>
+</main>
+</html>

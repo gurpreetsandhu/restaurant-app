@@ -1,0 +1,84 @@
+<!-- views/restaurantList.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/list-styles.css">
+  <title>Restaurant List</title>
+</head>
+
+<main>
+<%- include('partials/header') %>
+<body>
+<div class="rest-wrapper">
+  <!--  <h1 class="search-title">Search Menu</h1>
+
+   
+  <form action="/restaurants" class="search-form" method="get">
+    <label class="input-label" for="page">Page:</label>
+    <input type="number" name="page" value="1" min="1" required>
+    <label class="input-label" for="perPage">Per Page:</label>
+    <input type="number" name="perPage" value="5" min="1" required>
+    <label class="input-label" for="borough">Borough:</label>
+    <input type="text" name="borough" placeholder="e.g. Bronx" value="<%= borough %>">
+    <button class = "submit-button" type="submit">Search</button>
+  </form> -->
+
+  <!-- Restaurant List Table -->
+  <h2>Restaurant List</h2>
+  <% if (restaurants && restaurants.length > 0) { %>
+    <table border="1" class="rest-table">
+      <thead>
+        <tr>
+          <th class="attr">Restaurant ID</th>
+          <th class="attr">Name</th>
+          <th class="attr">Borough</th>
+          <th class="attr">Cuisine</th>
+          <th class="attr">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% restaurants.forEach(function(restaurant) { %>
+          <tr>
+            <td class="val"><%= restaurant.restaurant_id %></td>
+            <td class="val"><%= restaurant.name %></td>
+            <td class="val"><%= restaurant.borough %></td>
+            <td class="val"><%= restaurant.cuisine %></td>
+            <td>
+              <button class = "view-button" onclick="window.location.href='/api/restaurants/<%= restaurant._id %>';">View</button>
+              <button class = "edit-button" onclick="window.location.href='/restaurants/<%= restaurant._id %>/edit';">Edit</button>
+              <button class = "delete-button" onclick="window.location.href='/restaurants/<%= restaurant._id %>/delete';">Delete</button>
+            <!--  <a href="/restaurants/<%= restaurant._id %>">View</a> |
+              <a href="/restaurants/<%= restaurant._id %>/edit">Edit</a> |
+              <a href="/restaurants/<%= restaurant._id %>/delete">Delete</a> -->
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <p class="no-rest-message">No restaurants found based on your filters.</p>
+  <% } %>
+
+  <!-- Pagination Links (optional, if you want to implement pagination) -->
+  <div>
+    <% if (page > 1) { %>
+  <!--    <a href="/allRestaurants?page=<%= page - 1 %>&perPage=<%= perPage %>&borough=<%= borough %>">Previous</a> -->
+      <button class = "prev-button" onclick="window.location.href='/api/restaurants?page=<%= page - 1 %>&perPage=<%= perPage %>&borough=<%= borough %>';">Previous</button>
+    <% } %>
+    <% if (restaurants && restaurants.length > 0) { %>
+  <!--  <a href="/allRestaurants?page=<%= page + 1 %>&perPage=<%= perPage %>&borough=<%= borough %>">Next</a> -->
+  <button class = "next-button" onclick="window.location.href='/api/restaurants?page=<%= page + 1 %>&perPage=<%= perPage %>&borough=<%= borough %>';">Next</button>
+  <% } %>
+</div>
+
+  <!-- Link to create a new restaurant -->
+  <br>
+  <!-- <a href="/restaurants/create">Create New Restaurant</a>  -->
+  <button class = "create-button" onclick="window.location.href='/restaurants/create';">Create New Restaurant</button>
+</div>
+</body>
+<%- include('partials/footer') %>
+</main>
+</html>

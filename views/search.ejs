@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Search</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<main class="main-content">
+<%- include('partials/header') %>
+<body>
+  <div class="wrapper">
+  <h1>Search Restaurants</h1>
+  <form action="/api/restaurants" method="get" class="search-form">
+    <label for="page">Page:</label>
+    <input type="number" name="page" value="1" min="1" required>
+    <label for="perPage">Per Page:</label>
+    <input type="number" name="perPage" value="5" min="1" required>
+    <label for="borough">Borough:</label>
+    <input type="text" name="borough">
+    <button class = "submit-button" type="submit">Search</button>
+  </form>
+  <button class = "show-button" onclick="window.location.href='/api/restaurants';">Back to List</button>
+</div>
+</body>
+<%- include('partials/footer') %>
+</main>
+</html>
