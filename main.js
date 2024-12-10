@@ -140,6 +140,22 @@ app.delete('/api/restaurants/:id', async (req, res) => {
   }
 }); */
 
+// Home
+app.get('/', async (req, res) => {
+    const { page = 1, perPage = 5, borough } = req.query;
+  
+    try {
+      console.log('Starting: Search Restaurant');
+      res.redirect('/api/restaurants')
+      console.log('Completed: Search Restaurant');
+    } catch (error) {
+      var message = 'Error Searching Restaurants';
+      console.log(error);
+      //res.render('error', { message, layout:false });
+      res.status(500).render('error', { message, layout:false });
+    }
+  });
+
 /////////////////////////////////////////////////////// Search Restaurant form
 app.get('/restaurants', async (req, res) => {
     const { page = 1, perPage = 5, borough } = req.query;
