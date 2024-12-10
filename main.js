@@ -38,8 +38,8 @@ app.use((req, res, next) => {
 });
 
 // Setup Username and Password
-const username = prompt("Input Username: ");
-const password = prompt("Input Password: ");
+const username = process.env.USERNAME; //gurpreet2512singh; //prompt("Input Username: ");
+const password = process.env.PASSWORD; //Hamletss-80544; //prompt("Input Password: ");
 utility.updateUserName(username)
 var passwordCheck = utility.updatePassword(password);
 
